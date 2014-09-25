@@ -1,6 +1,6 @@
 # Express Lab
 
-Coffeescript version of (https://github.com/andersjanmyr/express-lab)
+Coffeescript version of https://github.com/andersjanmyr/express-lab
 
 ## Installation
 
