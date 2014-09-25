@@ -24,7 +24,13 @@ find = () -> books
 findById = (id) ->
     books.filter (book) -> (book.id == id)
 
+deleteById = (id) ->
+    #FIXME
+
+
 module.exports =
     find: find
     findById: findById
+    deleteById: deleteById
+
 

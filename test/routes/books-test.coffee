@@ -24,3 +24,41 @@ describe 'GET /books', ->
     after () ->
         # Model.generate.restore()
 
+
+describe 'GET /books/:id', ->
+
+    it 'responds with 404 if book not found', (done) ->
+        request(app)
+        .get('/books/abc')
+        .expect(404)
+        .end (err, res) ->
+                throw err if (err)
+                done()
+
+    it 'responds with the book', (done) ->
+        request(app)
+        .get('/books/bof')
+        .expect(200)
+        .expect('Content-Type', /json/)
+        .end (err, res) ->
+                throw err if (err)
+                expect(res.body.book.id).to.equal('bof')
+                done()
+
+describe 'DELETE /books/:id', ->
+
+    it 'responds with 404 if book not found', (done) ->
+        request(app)
+        .del('/books/abc')
+        .expect(404)
+        .end (err, res) ->
+                throw err if (err)
+                done()
+
+    it 'deletes the book', (done) ->
+        request(app)
+        .del('/books/bof')
+        .expect(204)
+        .end (err, res) ->
+                throw err if (err)
+                done()
