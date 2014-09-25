@@ -1,6 +1,6 @@
 # Express Lab
 
-A lab for learning how to create a JSON API with Express.
+Coffeescript version of (https://github.com/andersjanmyr/express-lab)
 
 ## Installation
 
