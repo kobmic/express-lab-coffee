@@ -1,13 +1,17 @@
 express = require 'express'
+morgan = require 'morgan'
 
 statusRoute = require './routes/status'
+booksRoute = require './routes/books'
 
-debug = require('debug')('express-lab:server')
+debug = require('debug')('express-lab-coffee:server')
 
 app = express()
 
+app.use(morgan('dev'))
 
 # Middleware and routes are added with use
+app.use('/books', booksRoute)
 app.use('/status', statusRoute)
 
 
