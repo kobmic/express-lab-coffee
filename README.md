@@ -206,9 +206,9 @@ Don't forget to create test too. Put it in `test/models/book-test.coffee`.
 
 Call the function `findById(id)`. Get the book from the array.
 
-### 8. Add a route for getting a book by id in `lib/routes/books.js`
+### 8. Add a route for getting a book by id in `lib/routes/books.coffee`
 
-Also add the accompanying test in `test/routes/books-test.js`. The server
+Also add the accompanying test in `test/routes/books-test.coffee`. The server
 should serve the list of books on `/books/:id`. The path parameter can be
 accessed via `req.params('id')` corresponding to the value after the colon.
 
