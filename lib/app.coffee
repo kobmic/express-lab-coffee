@@ -1,5 +1,6 @@
 express = require 'express'
 morgan = require 'morgan'
+bodyParser = require 'body-parser'
 
 statusRoute = require './routes/status'
 booksRoute = require './routes/books'
@@ -9,6 +10,7 @@ debug = require('debug')('express-lab-coffee:server')
 app = express()
 
 app.use(morgan('dev'))
+app.use(bodyParser.json())
 
 # Middleware and routes are added with use
 app.use('/books', booksRoute)
